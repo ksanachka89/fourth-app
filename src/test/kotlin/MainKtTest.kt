@@ -170,4 +170,18 @@ class MainKtTest {
         assertEquals(expectedCommission, actualCommission)
     }
 
+    @Test
+    fun commissionCalculation_Commission_VKPay_Else() {
+        val typeOfCard = TypeOfCard.VKPay
+        val transferAmount = 5_000_000
+        val expectedCommission = 50
+
+        val actualCommission = commissionCalculation(
+            typeOfCard = typeOfCard,
+            transferAmount = transferAmount
+        )
+
+        assertEquals(expectedCommission, actualCommission)
+    }
+
 }
